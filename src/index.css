@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Pretendard", system-ui, sans-serif;
+  --color-primary: #10b981; /* Emerald 500 */
+  --color-primary-dark: #059669; /* Emerald 600 */
+  --color-primary-light: #d1fae5; /* Emerald 100 */
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 antialiased;
+  }
+}
+
+.glass-morphism {
+  @apply bg-white/80 backdrop-blur-md border border-white/20;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/20 active:scale-95;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-slate-900 mb-4;
+}
+
+.section-subtitle {
+  @apply text-lg text-slate-500 mb-12 max-w-2xl;
+}
