@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import { ChevronDown, AlertCircle, CheckCircle2, ArrowRight, Rocket, ShieldCheck, Timer, MessageCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ConsultationForm from '../components/ConsultationForm';
 import FloatingKakao from '../components/FloatingKakao';
 
 const Home = () => {
@@ -33,7 +32,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-8"
+            className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-8 break-keep"
           >
             “맛도 괜찮고 리뷰도 쌓았는데 <br className="hidden md:block" />
             <span className="text-red-600">왜 손님은 늘지 않을까요?</span>”
@@ -78,11 +77,11 @@ const Home = () => {
       </section>
 
       {/* 2. Problem Section */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">문제는 단순합니다</h2>
-            <div className="inline-block bg-slate-900 text-white text-4xl md:text-6xl font-black px-6 py-4 rounded-2xl mb-8">
+            <h2 className="text-xl md:text-3xl font-bold text-slate-900 mb-6 break-keep">문제는 단순합니다</h2>
+            <div className="inline-block bg-slate-900 text-white text-xl md:text-6xl font-black px-4 py-3 md:px-6 md:py-4 rounded-2xl mb-8 break-keep">
               👉 “노출 위치”입니다
             </div>
           </div>
@@ -102,7 +101,7 @@ const Home = () => {
       </section>
 
       {/* 3. Contrast Section */}
-      <section className="py-24 px-6 bg-slate-900 text-white">
+      <section className="py-16 md:py-24 px-6 bg-slate-900 text-white">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
           <div className="p-8 rounded-3xl bg-slate-800/50 border border-slate-700 opacity-60">
             <h3 className="text-xl font-bold mb-6 text-slate-400">대부분 업체가 이렇게 합니다</h3>
@@ -116,7 +115,7 @@ const Home = () => {
                 <span>서로 경쟁 붙여서 돈만 받음</span>
               </li>
             </ul>
-            <div className="text-xl font-bold text-red-400">
+            <div className="text-lg md:text-xl font-bold text-red-400 break-keep">
               👉 결과? 전부 상위 못 가고 돈만 날립니다
             </div>
           </div>
@@ -134,7 +133,7 @@ const Home = () => {
                 <span className="font-bold text-slate-300">이미 계약된 업종 있으면 추가 진행 절대 안 함</span>
               </li>
             </ul>
-            <div className="text-xl font-bold text-white">
+            <div className="text-lg md:text-xl font-bold text-white break-keep">
               👉 우리는 애초에 방식이 다릅니다
             </div>
           </div>
@@ -142,18 +141,18 @@ const Home = () => {
       </section>
 
       {/* 4. Philosophy Section */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">이유는 간단합니다</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 break-keep">이유는 간단합니다</h2>
           
-          <div className="space-y-6 text-2xl md:text-3xl font-bold text-slate-900">
+          <div className="space-y-6 text-xl md:text-3xl font-bold text-slate-900 break-keep">
             <p className="opacity-40 line-through">상위노출은 “경쟁 싸움”이 아니라</p>
             <p className="text-primary">👉 “자리 선점 싸움”이기 때문입니다</p>
           </div>
 
           <div className="mt-16 p-10 rounded-[3rem] bg-slate-50 border-2 border-dashed border-slate-200">
             <p className="text-xl text-slate-600 mb-4">그래서 우리는</p>
-            <p className="text-3xl font-black text-slate-900">
+            <p className="text-xl md:text-3xl font-black text-slate-900 break-keep">
               👉 한 고객만 집중해서 <br />
               👉 그 지역 <span className="text-primary underline underline-offset-8">‘자리를 먹게 만듭니다’</span>
             </p>
@@ -163,9 +162,9 @@ const Home = () => {
       </section>
 
       {/* 5. Benefit Section */}
-      <section className="py-24 px-6 bg-emerald-50/30">
+      <section className="py-16 md:py-24 px-6 bg-emerald-50/30">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-center text-3xl font-bold mb-16">이렇게 바뀝니다</h2>
+          <h2 className="text-center text-2xl md:text-3xl font-bold mb-16 break-keep">이렇게 바뀝니다</h2>
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -183,24 +182,24 @@ const Home = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <div className="text-4xl font-black text-slate-900 mb-4">👉 결국</div>
-            <div className="text-5xl font-black text-primary">손님이 찾는 가게가 됩니다</div>
+            <div className="text-3xl md:text-4xl font-black text-slate-900 mb-4">👉 결국</div>
+            <div className="text-4xl md:text-5xl font-black text-primary break-keep">손님이 찾는 가게가 됩니다</div>
           </div>
         </div>
       </section>
 
       {/* 6. Trust Section */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-slate-400 mb-2">여기서 대부분 고객이 멈춘다</p>
             <h2 className="text-3xl font-bold text-slate-900">“그래도 또 사기 아니야?”</h2>
           </div>
 
           <div className="space-y-6">
             <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100">
-              <p className="text-xl font-bold text-slate-900 mb-4">👉 맞습니다. 그럴 수 있습니다.</p>
-              <p className="text-slate-600">수많은 마케팅 회사에 속아보셨을 테니까요.</p>
+              <p className="text-xl font-bold text-slate-900 mb-4">👉 맞습니다, 그렇게 느끼실 수 있습니다.</p>
+              <p className="text-slate-600 mb-6">왜냐하면 실제로 그런 업체들이 많기 때문입니다.</p>
+              <p className="text-xl font-bold text-slate-900">그래서 저희는</p>
             </div>
 
             <div className="grid gap-4">
@@ -224,14 +223,14 @@ const Home = () => {
       </section>
 
       {/* 7. Urgency Section */}
-      <section className="py-24 px-6 bg-red-600 text-white">
+      <section className="py-16 md:py-24 px-6 bg-red-600 text-white">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-block px-4 py-1 bg-white text-red-600 font-bold text-sm rounded-full mb-6 animate-pulse">
             URGENT: 마감 임박
           </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-8">현재 추가 모집 <br className="md:hidden" /> <span className="underline decoration-white underline-offset-8">30곳만</span> 진행 중</h2>
+          <h2 className="text-2xl md:text-5xl font-black mb-8 break-keep">현재 추가 모집 <br className="md:hidden" /> <span className="underline decoration-white underline-offset-8">30곳만</span> 진행 중</h2>
           
-          <div className="space-y-6 text-xl md:text-2xl font-bold mb-12">
+          <div className="space-y-6 text-lg md:text-2xl font-bold mb-12 break-keep">
             <p>👉 한 번 자리 채우면 같은 업종 절대 추가 계약 안 받습니다</p>
             <p className="opacity-80">지금 고민하는 동안 경쟁업체가 먼저 들어오면</p>
             <p className="text-yellow-300">👉 당신은 그 지역에서 밀립니다</p>
@@ -242,7 +241,7 @@ const Home = () => {
               href={KAKAO_CHAT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#FEE500] text-[#191919] text-2xl font-black px-12 py-6 rounded-full shadow-2xl transition-all active:scale-95 flex items-center justify-center gap-2 w-full md:w-auto"
+              className="bg-[#FEE500] text-[#191919] text-xl md:text-2xl font-black px-8 py-5 md:px-12 md:py-6 rounded-full shadow-2xl transition-all active:scale-95 flex items-center justify-center gap-2 w-full md:w-auto"
             >
               <MessageCircle size={28} fill="currentColor" />
               남은자리 확인하기
