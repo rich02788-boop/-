@@ -14,10 +14,10 @@ const FloatingKakao = () => {
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-[#FEE500] text-[#191919] px-6 py-4 rounded-full shadow-2xl font-bold text-lg border-2 border-white/50"
+      className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex items-center gap-2 md:gap-3 bg-[#FEE500] text-[#191919] px-5 py-3 md:px-6 md:py-4 rounded-full shadow-2xl font-bold text-base md:text-lg border-2 border-white/50 break-keep"
     >
-      <MessageCircle size={24} fill="currentColor" />
-      <span>남은자리 확인하기</span>
+      <MessageCircle size={20} className="md:w-6 md:h-6" fill="currentColor" />
+      <span className="whitespace-nowrap">남은자리 확인하기</span>
       
       {/* Pulse Effect */}
       <span className="absolute inset-0 rounded-full bg-[#FEE500] animate-ping opacity-20 -z-10"></span>
