@@ -1,6 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown, AlertCircle, CheckCircle2, ArrowRight, Rocket, ShieldCheck, Timer, MessageCircle } from 'lucide-react';
+import { ChevronDown, AlertCircle, CheckCircle2, ArrowRight, Rocket, ShieldCheck, Timer, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingKakao from '../components/FloatingKakao';
@@ -230,6 +238,168 @@ const Home = () => {
             <div className="text-3xl md:text-7xl font-black text-primary break-keep leading-tight">
               손님이 <span className="text-slate-900">찾는</span> 가게가 됩니다
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5.5. Reference Section: Success Cases Slider */}
+      <section className="py-20 md:py-32 px-5 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 md:mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 text-primary font-bold text-sm md:text-base"
+            >
+              SUCCESS CASES
+            </motion.div>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 break-keep leading-tight">
+              이미 많은 사장님들이 <br className="md:hidden" />
+              <span className="text-primary">압도적 노출</span>을 경험하고 계십니다
+            </h2>
+          </div>
+
+          <div className="relative px-4 md:px-12">
+            <Swiper
+              modules={[Pagination, Navigation, Autoplay]}
+              spaceBetween={20}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              navigation={{
+                prevEl: '.swiper-button-prev-custom',
+                nextEl: '.swiper-button-next-custom',
+              }}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              breakpoints={{
+                640: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 40 },
+              }}
+              className="pb-16"
+            >
+              {[
+                { 
+                  title: '옆커폰 목포하당점', 
+                  tag: '네이버 플레이스 1위', 
+                  achievement: '1등',
+                  keyword: '목포 휴대폰성지',
+                  desc: '치열한 성지 키워드에서 압도적 1위 노출',
+                  color: 'from-blue-600 to-indigo-700'
+                },
+                { 
+                  title: '영광힐링컨벤션타운', 
+                  tag: '네이버 플레이스 1위', 
+                  achievement: '1등',
+                  keyword: '영광펜션',
+                  desc: '지역 대표 키워드 최상단 고정으로 예약 폭주',
+                  color: 'from-emerald-600 to-teal-700'
+                },
+                { 
+                  title: '닭의도리 본점', 
+                  tag: '키워드 1위 & TV 출연', 
+                  achievement: (
+                    <div className="flex flex-col items-center leading-none">
+                      <span className="text-4xl md:text-5xl mb-2">1등</span>
+                      <div className="flex flex-col items-center border-t border-white/30 pt-2">
+                        <span className="text-2xl md:text-3xl">TV</span>
+                        <span className="text-xl md:text-2xl">출연</span>
+                      </div>
+                    </div>
+                  ),
+                  keyword: '대구 닭도리탕 1위',
+                  desc: '놀라운 토요일 출연 및 주요 키워드 최상단 점령',
+                  color: 'from-orange-600 to-red-700'
+                },
+                { 
+                  title: '노란마켓 계명대역점', 
+                  tag: '첫 페이지 안착', 
+                  achievement: 'TOP',
+                  keyword: '대구중고폰',
+                  desc: '광고비 없이 첫 페이지 노출로 유입 극대화',
+                  color: 'from-amber-500 to-yellow-600'
+                },
+                { 
+                  title: '루마썬팅 대구 월성점', 
+                  tag: '첫 페이지 안착', 
+                  achievement: 'TOP',
+                  keyword: '대구썬팅',
+                  desc: '기술 서비스 키워드 최상단 노출 성공',
+                  color: 'from-slate-700 to-slate-900'
+                },
+                { 
+                  title: 'GookSu (앞산국수)', 
+                  tag: '네이버 플레이스 1위', 
+                  achievement: '1등',
+                  keyword: '앞산맛집',
+                  desc: '로컬 맛집 키워드 1위로 지역 랜드마크 등극',
+                  color: 'from-rose-600 to-rose-800'
+                },
+              ].map((item, i) => (
+                <SwiperSlide key={i}>
+                  <div className="group relative h-full">
+                    <div className={`relative aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl mb-6 bg-gradient-to-br ${item.color} p-8 flex flex-col justify-between border border-white/10`}>
+                      {/* Decorative Background Element */}
+                      <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-colors duration-500" />
+                      
+                      <div className="relative z-10">
+                        <span className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md text-white text-xs font-bold rounded-full mb-4 border border-white/20">
+                          {item.tag}
+                        </span>
+                        <h4 className="text-white text-xl md:text-2xl font-black leading-tight break-keep">
+                          {item.title}
+                        </h4>
+                      </div>
+
+                      <div className="relative z-10 flex flex-col items-center justify-center py-4">
+                        <motion.div 
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          transition={{ delay: 0.2, type: 'spring' }}
+                          className="text-6xl md:text-8xl font-black text-white drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] italic tracking-tighter"
+                        >
+                          {item.achievement}
+                        </motion.div>
+                        <div className="mt-4 px-4 py-2 bg-black/20 backdrop-blur-sm rounded-xl border border-white/10">
+                          <p className="text-white/90 text-sm md:text-base font-bold">
+                            키워드: {item.keyword}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="relative z-10">
+                        <p className="text-white/80 text-sm md:text-base font-medium break-keep leading-relaxed">
+                          {item.desc}
+                        </p>
+                        <div className="mt-6 w-full h-1 bg-white/20 rounded-full overflow-hidden">
+                          <motion.div 
+                            initial={{ width: 0 }}
+                            whileInView={{ width: '100%' }}
+                            transition={{ duration: 1.5, ease: 'easeOut' }}
+                            className="h-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Custom Navigation Buttons */}
+            <button className="swiper-button-prev-custom absolute top-1/2 -left-4 md:-left-8 -translate-y-1/2 z-10 w-12 h-12 md:w-16 md:h-16 bg-white rounded-full shadow-xl flex items-center justify-center text-slate-400 hover:text-primary hover:scale-110 transition-all cursor-pointer hidden md:flex">
+              <ChevronLeft size={32} />
+            </button>
+            <button className="swiper-button-next-custom absolute top-1/2 -right-4 md:-right-8 -translate-y-1/2 z-10 w-12 h-12 md:w-16 md:h-16 bg-white rounded-full shadow-xl flex items-center justify-center text-slate-400 hover:text-primary hover:scale-110 transition-all cursor-pointer hidden md:flex">
+              <ChevronRight size={32} />
+            </button>
+          </div>
+
+          <div className="mt-12 md:mt-20 p-8 md:p-12 rounded-[2.5rem] bg-slate-900 text-white text-center">
+            <p className="text-lg md:text-2xl font-bold mb-2 opacity-70">이 모든 결과는</p>
+            <p className="text-2xl md:text-4xl font-black break-keep leading-tight">
+              단순한 노출이 아닌 <br className="md:hidden" />
+              <span className="text-primary">‘전략적 자리 선점’</span>의 결과입니다
+            </p>
           </div>
         </div>
       </section>
